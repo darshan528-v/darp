@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3f5ef">
+  <title>Daymark | To-do list</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <a class="wordmark" href="#main" aria-label="Daymark home">
+        <span class="wordmark-mark" aria-hidden="true">D</span>
+        <span>daymark</span>
+      </a>
+      <span class="header-note"><span class="status-dot" aria-hidden="true"></span> YOUR DAILY SPACE</span>
+    </header>
+
+    <section class="workspace" id="main" aria-labelledby="page-title">
+      <div class="intro">
+        <div class="intro-copy">
+          <p class="eyebrow">A CLEARER HEAD STARTS HERE</p>
+          <h1 id="page-title">Make today <span>count.</span></h1>
+          <p class="date-label" id="today-label"></p>
+        </div>
+        <div class="day-stamp" aria-hidden="true">
+          <span class="stamp-top">ONE DAY</span>
+          <span class="stamp-number" id="day-number">01</span>
+          <span class="stamp-bottom">AT A TIME</span>
+        </div>
+      </div>
+
+      <form class="task-form" id="task-form" novalidate>
+        <label class="visually-hidden" for="task-input">Add a task</label>
+        <span class="input-mark" aria-hidden="true">+</span>
+        <input id="task-input" name="task" type="text" maxlength="240" placeholder="What needs your attention?" autocomplete="off" aria-describedby="form-message">
+        <button class="add-button" type="submit"><span aria-hidden="true">+</span> Add task</button>
+      </form>
+      <p class="form-message" id="form-message" aria-live="polite"></p>
+
+      <section class="task-panel" aria-label="Tasks">
+        <div class="list-toolbar">
+          <div class="filter-group" role="group" aria-label="Filter tasks">
+            <button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">All <span class="filter-count" data-filter-count="all">0</span></button>
+            <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active <span class="filter-count" data-filter-count="active">0</span></button>
+            <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed <span class="filter-count" data-filter-count="completed">0</span></button>
+          </div>
+          <span class="list-caption" id="list-caption">YOUR LIST</span>
+        </div>
+
+        <ul class="task-list" id="task-list" aria-label="Your tasks"></ul>
+        <div class="empty-state" id="empty-state" hidden>
+          <span class="empty-mark" aria-hidden="true">&#10003;</span>
+          <p class="empty-title" id="empty-title">A little breathing room.</p>
+          <p class="empty-copy" id="empty-copy">Add a task above to get started.</p>
+        </div>
+
+        <footer class="list-footer">
+          <p class="task-count" id="task-count" aria-live="polite">0 tasks left</p>
+          <button class="clear-button" id="clear-completed" type="button" disabled>Clear completed</button>
+        </footer>
+      </section>
+      <p class="storage-note"><span aria-hidden="true">&#9679;</span> Your tasks stay on this device</p>
+    </section>
+
+    <footer class="page-footer">
+      <span>DAYMARK / PERSONAL TASK SPACE</span>
+      <span>ONE THING AT A TIME</span>
+    </footer>
+  </main>
+</body>
+</html>
